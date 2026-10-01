@@ -1,0 +1,28 @@
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        section
+            h1 Motorcycles Table 
+            
+            div 
+                a(href='update-cobj') Add to this table
+
+            div.table-container
+                table.modern-table
+                    thead 
+                        tr 
+                            td Brand
+                            td Model
+                            td Make
+                    each motorcycle in data
+                        tr
+                            td
+                                p.card__name #{motorcycle.properties.name}  
+                            td
+                                p.card__model #{motorcycle.properties.model}
+                            td
+                                p.card__make #{motorcycle.properties.make}

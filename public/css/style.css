@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
+/* Core Layout Variables */
+:root {
+  --table-bg: #ffffff;
+  --table-header-bg: #f8fafc;
+  --table-header-text: #475569;
+  --table-text: #1e293b;
+  --table-border: #e2e8f0;
+  --table-hover: #f1f5f9;
+  --table-zebra: #f8fafc;
+}
+
 body, * {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -7,7 +19,7 @@ body, * {
 }
 
 h1 {
-    margin: 1rem;
+    margin: 0 0 1rem;
 }
 
 .cards {
@@ -46,7 +58,8 @@ label, input {
     font-size: inherit;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
     padding: .25rem;
 }
 
@@ -55,4 +68,84 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+thead {
+    font-weight: 700;
+}
+
+section {
+    max-width: 1024px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--table-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  background-color: var(--table-bg);
+  margin-top: 1rem;
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  color: var(--table-text);
+  text-align: left;
+}
+
+/* Accessible Visually Hidden Caption / Or Styled Bottom Caption */
+.modern-table caption {
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  caption-side: bottom;
+  text-align: left;
+}
+
+.modern-table thead tr {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  border-bottom: 2px solid var(--table-border);
+}
+
+.modern-table th {
+  position: sticky;
+  top: 0;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+
+.modern-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--table-border);
+  vertical-align: middle;
+}
+
+.modern-table tbody tr:nth-child(even) {
+  background-color: var(--table-zebra);
+}
+
+.modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.modern-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.modern-table tbody tr:hover {
+  background-color: var(--table-hover);
 }
